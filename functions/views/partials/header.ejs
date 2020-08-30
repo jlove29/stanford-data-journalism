@@ -1,0 +1,30 @@
+<style>
+    .header {
+        border-bottom: 3px solid black;
+    }
+
+    nav .nav-item a {
+        border-bottom: 0px solid black;
+    }
+
+    nav .nav-item.active a {
+        border-bottom: 1px solid black;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="header-container">
+    <h1 class="header">Stanford Data Stories</h1>
+
+    <nav class="navbar">
+        <ul class="nav-items">
+        <% const pages = {"Politics": "/politics", "Environment": "/environment", "COVID-19": "/covid", "Demographics": "/demographics"} %>
+        <% for(page in pages){ %>
+            <% let itemClass = (page == activePage) ? "nav-item active" : "nav-item" %>
+            <li class="<%=itemClass%>">
+                <a href="<%=pages[page]%>"><%=page%></a>
+            </li>
+    </nav>
+</div>

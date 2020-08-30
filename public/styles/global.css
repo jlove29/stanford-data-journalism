@@ -1,0 +1,29 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+h1, h2, h3, h4, a, p, li {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p, a {
+    font-size: 14px;
+}
