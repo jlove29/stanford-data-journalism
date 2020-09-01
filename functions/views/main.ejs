@@ -1,4 +1,5 @@
-<%- include('./partials/head.ejs') %>
+<% include ./partials/head.ejs %>
+<% include ./partials/headerStyles.ejs %>
     
     <style>
         /*
@@ -6,10 +7,14 @@
         */
     </style>
 
-<%- include('./partials/header.ejs', {active: 'Home'}) %>
+</head>
+<body>
 
-    <div class="container-md">
-        <p>hello</p>
+    <div class="container-md mx-auto">
+        <%- include('./partials/header.ejs', {activePage: 'Home'}) %>
+
+        <p>yo</p>
     </div>
 
 </body>
+</html>
