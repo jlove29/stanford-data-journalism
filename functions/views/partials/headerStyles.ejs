@@ -1,18 +1,100 @@
 <style>
-    .header {
-        border-bottom: 3px solid black;
-        width: 100%;
+
+  .header-container{
+    background-color: white;
+    padding-bottom: 10px;
+  }
+
+  .header {
+    font-size: 24px;
+    padding: 20px 0;
+    border-bottom: 3px solid black;
+  }
+
+  .navbar {
+    padding: .25rem 0;
+  }
+
+  #profile-pic {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+  }
+
+
+  @media (min-width: 600px) {
+    .navbar-expand-custom {
+      margin-top: 20px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
     }
 
-    .navbar {
-        width: 100%;
+    .navbar-expand-custom .navbar-nav {
+      flex-direction: row;
     }
 
-    nav .nav-item a {
-        border-bottom: 0px solid black;
+    .navbar-expand-custom .navbar-nav .nav-link {
+      padding-right: .5rem;
+      padding-left: .5rem;
     }
 
-    nav .nav-item.active a {
-        border-bottom: 1px solid black;
+    .navbar-expand-custom .navbar-collapse {
+      display: flex !important;
     }
+
+    .navbar-expand-custom .navbar-toggler {
+      display: none;
+    }
+
+    .navbar-nav>li:nth-of-type(1) {
+      margin-top: 0!important;
+    }
+  }
+
+  .shadow-header {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+  }
+
+  button.navbar-toggler {
+    border-color: black;
+  }
+
+  .navbar-nav>li:nth-of-type(1) {
+    margin-top: 10px;
+  }
+
+  .navbar-nav>li {
+    /* font-size: 1.2em; */
+    padding-right: 5vw;
+    /* margin-left: auto; */
+    margin-right: auto;
+  }
+
+  .navbar-nav>li .navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+  }
+
+  .navbar-nav>li .navbar-brand img {
+    border-radius: 50%;
+  }
+
+  nav .nav-item a {
+    font-size: 18px;
+    font-family: 'IBM Plex Serif', serif;
+    padding-bottom: 3px;
+    transition: 0.075s;
+    color: black !important;
+  }
+
+  nav .nav-item:not(.active) a:hover {
+    transition: 0.075s;
+  }
+
+  nav .nav-item.active a {
+    font-weight: 900;
+  }
 </style>
