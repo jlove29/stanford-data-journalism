@@ -1,0 +1,122 @@
+<%- include ('./partials/head.ejs') %>
+<%- include ('./partials/headerStyles.ejs') %>
+
+<style>
+    .featured-article-container {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .article-title {
+                padding-top: 10px;
+                font-size: 36px;
+                font-weight: bold;
+            }
+
+            .author {
+                color: black;
+                font-size: 14px;
+            }
+
+            .author:hover {
+                color: black;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .metadata-container {
+                margin-bottom: 20px;
+            }
+
+            .date {
+                font-family: "IBM Plex Serif", serif;
+                font-weight: bold;
+                font-size: 12px;
+                padding-right: 0px;
+                margin-right: 0px;
+            }
+
+            .tags {
+                font-family: "IBM Plex Serif", serif;
+                font-weight: bold;
+                font-size: 12px;
+            }
+
+            .tag {
+                color:gray;
+            }
+
+            .tag:hover {
+                color: gray;
+            }
+
+            @media (max-width: 768px) {
+                .feature-article-info {
+                    padding-top: 20px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+            }
+</style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid content-container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-7 col-xl-7 mx-auto">
+                <%- include ('./partials/header.ejs', {activePage: "Home"}) %>
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="article-title">Article Title: This is an Article</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2>This is some subtext for this article. Subtexts for articles are good.</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a class="author" href="./author">By Author One</a>
+                    </div>
+                </div>
+                <div class="row metadata-container">
+                    <div class="col-4">
+                        <div class="date">Month XX, YYYY</div>
+                    </div>
+                    <div class="col-8">
+                        <div class="tags"><a class="tag" href="./politics">Politics</a>, <a class="tag" href="./environment">Environment</a></div>
+                    </div>
+                </div>
+                <div class="row featured-article-container">
+                    <div class="col-12 image-container">
+                        <img class="image" src="/media/placeholder.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 body">
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                        <p>You can’t handle the truth! Son we live in a world that has walls, and those walls have to be guarded by men with guns. Whose gonna do it you? You Lieutenant Weinberg? I have a greater responsibility that you can possibly fathom. You weep for Santiago and you curse the Marines. You have the luxury. You have the luxury of not knowing what I know, that Santiago’s death while tragic, probably saved lives; and my existence while grotesque, and incomprehensible, to you, saves lives. You don’t want the truth because deep down in places you don’t talk about at parties, you want me on that well, you need me on that wall! We use words like honor, code, loyalty. We use these words as the backbone of a life spent defending something, you use them as a punchline. I have neither the time, nor the inclination to explain myself, to a man who rises and sleeps, under the blanket of the very freedom that I provide, and than questions the manner in which I provide them! I’d rather you just said ‘thank you’, and went on your way. Otherwise I suggest you pick up a weapon, and stand a post. Either way, I don’t give a damn, what you think you are entitled to!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+</body>
+
+</html>
