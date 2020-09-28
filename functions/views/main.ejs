@@ -2,86 +2,128 @@
 <%- include ('./partials/headerStyles.ejs') %>
 
 <style>
-    /*
-        Page specific styles
-        */
+    h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+p {
+    font-size: 12px;
+}
+    .featured-article-container {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            img {
+                object-fit: cover;
+                max-width: 100%
+            }
+
+            .article-title {
+                color: black;
+            }
+
+            .article-title:hover {
+                color: black;
+            }
+
+            .article-title-non-featured {
+                padding-top: 10px;
+            }
+
+            .date {
+                font-family: "IBM Plex Serif", serif;
+                font-weight: bold;
+                font-size: 12px;
+                padding-right: 0px;
+                margin-right: 0px;
+            }
+
+            .tags {
+                font-family: "IBM Plex Serif", serif;
+                font-weight: bold;
+                color: gray;
+                font-size: 12px;
+            }
+
+            @media (max-width: 768px) {
+                .feature-article-info {
+                    padding-top: 20px;
+                }
+            }
 </style>
 
 </head>
 
 <body>
 
-    <div class="container-sm mx-auto">
-        <%- include('./partials/header.ejs', {activePage: 'Home'}) %>
+    <div class="container-fluid content-container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-7 col-xl-7 mx-auto">
+                <%- include ('./partials/header.ejs', {activePage: activePage}) %>
+                <div class="row featured-article-container">
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 col-xl-7 image-container">
+                        <img class="image" src="/media/placeholder.png">
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 col-xl-5 feature-article-info">
+                        <a class="article-title" href="/article"><h2>Featured article title</h2></a>
+                        <h3>This is some subtext for the featured article.</h3>
+                        <div class="row metadata">
+                            <div class="col-4 date">August 01</div>
+                            <div class="col-8 tags">Tag1, Tag2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Most recent articles</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        <img class="image" src="/media/placeholder.png">
+                        <a href="/article"><h3 class="article-title article-title-non-featured">Article title</h3></a>
+                        <h4>This is some subtext for this article.</h4>
+                        <div class="row metadata">
+                            <div class="col-4 date">August 01</div>
+                            <div class="col-8 tags">Tag1, Tag2</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        <img class="image" src="/media/placeholder.png">
+                        <a href="/article"><h3 class="article-title article-title-non-featured">Article title</h3></a>
+                        <h4>This is some subtext for this article.</h4>
+                        <div class="row metadata">
+                            <div class="col-4 date">August 01</div>
+                            <div class="col-8 tags">Tag1, Tag2</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        <img class="image" src="/media/placeholder.png">
+                        <a href="/article"><h3 class="article-title article-title-non-featured">Article title</h3></a>
+                        <h4>This is some subtext for this article.</h4>
+                        <div class="row metadata">
+                            <div class="col-4 date">August 01</div>
+                            <div class="col-8 tags">Tag1, Tag2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <p style="font-size:16px">Far out in the uncharted backwaters of the unfashionable end of
-            the western spiral arm of the Galaxy lies a small unregarded
-            yellow sun.
-
-            Orbiting this at a distance of roughly ninety-two million miles
-            is an utterly insignificant little blue green planet whose ape-
-            descended life forms are so amazingly primitive that they still
-            think digital watches are a pretty neat idea.
-
-            This planet has - or rather had - a problem, which was this: most
-            of the people living on it were unhappy for pretty much of the time.
-            Many solutions were suggested for this problem, but most of these
-            were largely concerned with the movements of small green pieces
-            of paper, which is odd because on the whole it wasn't the small
-            green pieces of paper that were unhappy.
-
-            And so the problem remained; lots of the people were mean, and
-            most of them were miserable, even the ones with digital watches.
-
-            Many were increasingly of the opinion that they'd all made a big
-            mistake in coming down from the trees in the first place. And
-            some suggested that even the trees had been a bad move, and that no
-            one should ever have left the oceans.
-
-            a girl sitting on her own in a
-            small cafe in Rickmansworth England suddenly realized what it was that
-            had been going wrong all this time, and she finally knew how the
-            world could be made a good and happy place. This time it was
-            right, it would work, and no one would have to get nailed to
-            anything.
-
-            Sadly, however, before she could get to a telephone to tell anyone
-            about it, a terribly stupid catastrophe occurred, and the idea
-            was lost forever.
-
-            This is not her story.
-
-            But it is the story of that terrible stupid catastrophe and some
-            of its consequences.
-
-            It is also the story of a book. A book called The Hitch Hiker's
-            Guide to the Galaxy - not an Earth book, never published on
-            Earth, and until the terrible catastrophe occurred, never seen or even
-            heard of by any Earthman.
-
-            Nevertheless, a wholly remarkable book.
-
-            It is, perhaps, the most remarkable book ever to come out
-            of the great publishing houses of Ursa Minor - of which no
-            Earthman had ever heard either.
-
-            And in many of the more relaxed civilizations on the Outer Easterni
-            Rim of the Galaxy, the Hitch Hiker's Guide has already supplanted
-            the great Encyclopedia Galactica as the standard repository of
-            all knowledge and wisdom, for though it has many omissions and
-            contains much that is apocryphal, or at least wildly inaccurate,
-            it scores over the older, more pedestrian work in two important
-            respects.
-
-            First, it is slightly cheaper; and secondly it has the words
-            Don't Panic inscribed in large friendly letters on its cover.
-
-            But the story of this terrible, stupid Thursday, the story of its
-            extraordinary consequences, and the story of how these
-            consequences are inextricably intertwined with this remarkable
-            book begins very simply.
-
-            It begins with a house</p>
+        
     </div>
 
 </body>
