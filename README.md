@@ -4,7 +4,7 @@
 
 ### It is highly recommended that you read or skim these instructions in full before starting. Please let Avi or Jonathan know if you need any help.:
 
-1. Check you email for an invite from Jonathan to the Firebase project, and accept it. Once you accept, you can access the Firebase project at [console.firebase.google.com](https://console.firebase.google.com). 
+1. Check your email for an invite to the Firebase project, and accept it. Once you accept, you can access the Firebase project at [console.firebase.google.com](https://console.firebase.google.com). 
     * Firebase is a set of services on the Google Cloud platform for web and mobile development. In this project, two major Firebase services are used: [Cloud Functions](https://firebase.google.com/docs/functions), which is used to manage HTTP endpoints, and [Hosting](https://firebase.google.com/docs/hosting) which is used to easily connect a domain name to the project's back end environment and public files.
     * The project cannot simply be uploaded directly to the domain since this doesn't work for projects with server side code (most SCS web dev so far has been with projects that only require client-side resources). Right now, Firebase Hosting seems to be the easiest and cheapest way to get a back end deployed on a domain; setting this up for [the website we manage](https://www.geogenius.org) took around half an hour and our Firebase Hosting costs have been within free usage for over a year. However, if anyone wants to try a different framework, that's all well and good, especially if an alternative is desired after looking at [Firebase's pricing](https://firebase.google.com/pricing) for Cloud Functions and Hosting.
     
