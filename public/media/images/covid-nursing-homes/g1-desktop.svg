@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 233.95" style="enable-background:new 0 0 650 233.95;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#6D7C93;}
+	.st1{font-family:'IBMPlexSerif-SemiBold';}
+	.st2{font-size:12px;}
+	.st3{font-family:'IBMPlexSerif';}
+	.st4{fill:#FFFFFF;}
+	.st5{font-family:'IBMPlexSerif-Bold';}
+</style>
+<text transform="matrix(1 0 0 1 4.118 13.3699)" class="st1 st2">Number of Nursing Homes by CMS Rating</text>
+<rect x="4.12" y="162.43" class="st0" width="53.06" height="53"/>
+<rect x="63.57" y="119.5" class="st0" width="53.06" height="95.93"/>
+<rect x="123.03" y="109.44" class="st0" width="53.06" height="105.99"/>
+<rect x="182.48" y="103.27" class="st0" width="53.06" height="112.16"/>
+<rect x="241.94" y="34.86" class="st0" width="53.06" height="180.57"/>
+<text transform="matrix(1 0 0 1 18.0005 159.4304)" class="st3 st2">10%</text>
+<text transform="matrix(1 0 0 1 77.4546 116.4977)" class="st3 st2">18%</text>
+<text transform="matrix(1 0 0 1 137.6744 106.4353)" class="st3 st2">19%</text>
+<text transform="matrix(1 0 0 1 196.3636 100.2698)" class="st3 st2">21%</text>
+<text transform="matrix(1 0 0 1 255.6677 31.8585)" class="st3 st2">33%</text>
+<text transform="matrix(1 0 0 1 116.3596 229.1066)" class="st3 st2">CMS Rating</text>
+<text transform="matrix(1 0 0 1 27.0422 211.4251)" class="st4 st5 st2">1</text>
+<text transform="matrix(1 0 0 1 86.503 211.4252)" class="st4 st5 st2">2</text>
+<text transform="matrix(1 0 0 1 145.9576 211.4252)" class="st4 st5 st2">3</text>
+<text transform="matrix(1 0 0 1 205.4118 211.4252)" class="st4 st5 st2">4</text>
+<text transform="matrix(1 0 0 1 264.866 211.4252)" class="st4 st5 st2">5</text>
+<text transform="matrix(1 0 0 1 353.1237 13.3705)" class="st1 st2">Cases Per 100 Residents by CMS Rating</text>
+<text transform="matrix(1 0 0 1 465.3654 229.1071)" class="st3 st2">CMS Rating</text>
+<rect x="353.12" y="34.86" class="st0" width="53.06" height="180.57"/>
+<rect x="412.58" y="34.86" class="st0" width="53.06" height="180.57"/>
+<rect x="472.03" y="49.52" class="st0" width="53.06" height="165.91"/>
+<rect x="531.49" y="103.35" class="st0" width="53.06" height="112.16"/>
+<rect x="590.94" y="132.47" class="st0" width="53.06" height="82.95"/>
+<text transform="matrix(1 0 0 1 371.6891 31.8587)" class="st3 st2">25</text>
+<text transform="matrix(1 0 0 1 431.1434 31.859)" class="st3 st2">25</text>
+<text transform="matrix(1 0 0 1 490.5981 46.5197)" class="st3 st2">23</text>
+<text transform="matrix(1 0 0 1 550.9679 100.3525)" class="st3 st2">15</text>
+<text transform="matrix(1 0 0 1 610.5721 129.4729)" class="st3 st2">11</text>
+<text transform="matrix(1 0 0 1 376.048 211.4255)" class="st4 st5 st2">1</text>
+<text transform="matrix(1 0 0 1 435.5088 211.4256)" class="st4 st5 st2">2</text>
+<text transform="matrix(1 0 0 1 494.9633 211.4256)" class="st4 st5 st2">3</text>
+<text transform="matrix(1 0 0 1 554.4175 211.4256)" class="st4 st5 st2">4</text>
+<text transform="matrix(1 0 0 1 613.8717 211.4256)" class="st4 st5 st2">5</text>
+</svg>

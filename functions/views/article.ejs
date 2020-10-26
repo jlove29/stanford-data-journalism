@@ -25,6 +25,7 @@
             img {
                 width: 100%;
                 object-fit: cover;
+                margin-bottom: 10px;
             }
 
             .metadata-container {
@@ -56,6 +57,18 @@
             @media (max-width: 768px) {
                 .feature-article-info {
                     padding-top: 20px;
+                }
+            }
+
+            @media (min-width: 400px) {
+                .mobile-img {
+                    display: none !important;
+                }
+            }
+
+            @media (max-width: 399px) {
+                .desktop-img {
+                    display: none !important;
                 }
             }
 
@@ -102,11 +115,13 @@
                             <% } %>
                     </div>
                 </div>
+                <!--
                 <div class="row featured-article-container">
                     <div class="col-12 image-container">
                         <img class="image" src="<%=image%>">
                     </div>
                 </div>
+                -->
                 <div class="row">
                     <div class="col-12 body">
                         <%- text %>
