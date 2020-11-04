@@ -77,12 +77,15 @@ function getActivePage(category){
   }
 }
 
-app.get('/:category', (req, res, next) => {
+app.get('/:category', async (req, res, next) => {
   let category = req.params.category;
 
   if(category in tagNames || category in authors){
+    let featureTag = category + "-feature";
+    let feature = await getArticles(featureTag);
     res.render('main', {
-      activePage: getActivePage(category)
+      activePage: getActivePage(category),
+      feature: feature
     });
   }else {
     next();
