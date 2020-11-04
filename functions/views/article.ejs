@@ -2,10 +2,6 @@
 <%- include ('./partials/headerStyles.ejs') %>
 
 <style>
-    .featured-article-container {
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
 
             .article-title {
                 padding-top: 10px;
@@ -76,7 +72,11 @@
                 font-size: 16px;
             }
 
-            .image-container, .body {
+            .image-container {
+                padding: 20px;
+            }
+
+            .body {
                 padding: 30px;
             }
 </style>
@@ -111,17 +111,21 @@
                     <div class="col-8">
                         <div class="tags">
                             <% for(var tag of tags) { %>
-                                <a class="tag" href="<%=tag.tagID%>"><%=tag.tagName%></a> 
+                                <% if(tag) { %>
+                                    <a class="tag" href="<%=tag.tagID%>"><%=tag.tagName%></a> 
+                                <% } %>
                             <% } %>
+                        </div>
                     </div>
                 </div>
-                <!--
-                <div class="row featured-article-container">
-                    <div class="col-12 image-container">
-                        <img class="image" src="<%=image%>">
+                <div class="row image-container">
+                    <div class="col-12 image-desktop-container desktop-img">
+                        <img src="<%=image_desktop%>">
+                    </div>
+                    <div class="col-12 image-mobile-container mobile-img">
+                        <img src="<%=image_mobile%>">
                     </div>
                 </div>
-                -->
                 <div class="row">
                     <div class="col-12 body">
                         <%- text %>

@@ -71,6 +71,18 @@ p {
                     padding-top: 20px;
                 }
             }
+
+            @media (min-width: 400px) {
+                .mobile-img {
+                    display: none !important;
+                }
+            }
+
+            @media (max-width: 399px) {
+                .desktop-img {
+                    display: none !important;
+                }
+            }
 </style>
 
 </head>
@@ -83,14 +95,21 @@ p {
                 <%- include ('./partials/header.ejs', {activePage: activePage}) %>
                 <div class="row featured-article-container">
                     <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 col-xl-7 image-container">
-                        <img class="image" src="/media/placeholder.png">
+                        <img class="desktop-img" src="<%=feature.image%>">
+                        <img class="mobile-img" src="<%=feature.image_mobile%>">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 col-xl-5 feature-article-info">
-                        <a class="article-title" href="/article"><h2>Featured article title</h2></a>
-                        <h3>This is some subtext for the featured article.</h3>
+                        <a class="article-title" href="/article"><h2><%=feature.title%></h2></a>
+                        <h3><%=feature.subtitle%></h3>
                         <div class="row metadata">
-                            <div class="col-4 date">August 01</div>
-                            <div class="col-8 tags"><a class="tag" href="./politics">Politics</a>, <a class="tag" href="./environment">Environment</a></div>
+                            <div class="col-4 date"><%=feature.date%></div>
+                            <div class="col-8 tags">
+                                <% for(var tag of feature.tags) { %>
+                                    <% if(tag) { %>
+                                        <a class="tag" href="<%=tag.tagID%>"><%=tag.tagName%></a> 
+                                    <% } %>
+                                <% } %>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -14,9 +14,54 @@ admin.initializeApp({
   databaseURL: "https://stanford-data-journalism.firebaseio.com"
 });
 
+const db = admin.firestore();
 
-app.get('/', (req, res) => {
-  res.render('main', {activePage: "Home"});
+async function getArticles(category){
+  return new Promise(async (resolve, reject) => {
+    try {
+      let snap = await db.collection('articles').where('tags', 'array-contains', category).get();
+      
+      snap.forEach((doc) => {
+        console.log(doc.exists);
+
+        let articleData = doc.data();
+
+        let time = new moment(articleData.timestamp.seconds*1000);
+        let timeDisplay = time.format('MMMM Do, YYYY')
+        let author_id = articleData.author.toLowerCase().split().join("_");
+        let tags = articleData.tags.map(tag => {
+        if(tag in tagNames){
+          return {tagID: tag, tagName: tagNames[tag]};
+        }else{
+          return false;
+        }
+        });
+        let article = articleData;
+        article.date = timeDisplay;
+        article.author_id = author_id;
+        article.tags = tags;
+        resolve(article);
+      });
+    }catch(err){
+      reject(err);
+    }
+    
+  });
+}
+
+
+app.get('/', async (req, res, next) => {
+  try {
+    let featureData = await getArticles('main-feature');
+    
+    res.render('main', {
+      activePage: "Home",
+      feature: featureData
+    });
+  } catch (err) {
+    console.log(err);
+    next();
+  }
 });
 
 const tagNames = {"politics": "Politics", "environment": "Environment", "covid": "COVID-19", "demographics": "Demographics"};
@@ -45,18 +90,23 @@ app.get('/:category', (req, res, next) => {
 app.get('/:article', (req, res, next) => {
   let id = req.params.article;
 
-  admin.firestore().collection("articles").doc(id).get().then(snap => {
+  db.collection("articles").doc(id).get().then(snap => {
     let article = snap.data();
     let time = new moment(article.timestamp.seconds*1000);
     let author_id = article.author.toLowerCase().split().join("_");
     let tags = article.tags.map(tag => {
-      console.log(tagNames[tag]);
-      return {tagID: tagNames[tag], tagName: tag}});
+      if(tag in tagNames){
+        return {tagID: tag, tagName: tagNames[tag]};
+      }else{
+        return false;
+      }
+    });
 
     res.render('article', {
       title: article.title,
       subtitle: article.subtitle,
-      image: article.image,
+      image_desktop: article.image,
+      image_mobile: article.image_mobile,
       date: time.format('MMMM Do, YYYY'),
       author: article.author,
       author_id: author_id,
