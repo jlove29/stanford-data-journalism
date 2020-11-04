@@ -40,6 +40,8 @@ async function getArticles(category){
         article.date = timeDisplay;
         article.author_id = author_id;
         article.tags = tags;
+        console.log(doc.id);
+        article.id = doc.id;
         resolve(article);
       });
     }catch(err){
