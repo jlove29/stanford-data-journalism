@@ -119,33 +119,24 @@ p {
                     </div>
                 </div>
                 <div class="row">
+                    <% for(article of recentArticles){ %>
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <img class="image" src="/media/placeholder.png">
-                        <a href="/article"><h3 class="article-title article-title-non-featured">Article title</h3></a>
-                        <h4>This is some subtext for this article.</h4>
+                        <img class="desktop-img" src="<%=article.image%>">
+                        <img class="mobile-img" src="<%=article.image_mobile%>">
+                        <a href="<%=article.id%>"><h3 class="article-title article-title-non-featured"><%=article.title%></h3></a>
+                        <h4><%=article.subtitle%></h4>
                         <div class="row metadata">
-                            <div class="col-4 date">August 01</div>
-                            <div class="col-8 tags"><a class="tag" href="./politics">Politics</a>, <a class="tag" href="./environment">Environment</a></div>
+                            <div class="col-4 date"><%=article.date%></div>
+                            <div class="col-8 tags">
+                            <% for(var tag of feature.tags) { %>
+                                <% if(tag) { %>
+                                    <a class="tag" href="<%=tag.tagID%>"><%=tag.tagName%></a> 
+                                <% } %>
+                            <% } %>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <img class="image" src="/media/placeholder.png">
-                        <a href="/article"><h3 class="article-title article-title-non-featured">Article title</h3></a>
-                        <h4>This is some subtext for this article.</h4>
-                        <div class="row metadata">
-                            <div class="col-4 date">August 01</div>
-                            <div class="col-8 tags"><a class="tag" href="./politics">Politics</a>, <a class="tag" href="./environment">Environment</a></div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <img class="image" src="/media/placeholder.png">
-                        <a href="/article"><h3 class="article-title article-title-non-featured">Article title</h3></a>
-                        <h4>This is some subtext for this article.</h4>
-                        <div class="row metadata">
-                            <div class="col-4 date">August 01</div>
-                            <div class="col-8 tags"><a class="tag" href="./politics">Politics</a>, <a class="tag" href="./environment">Environment</a></div>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>

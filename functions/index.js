@@ -16,17 +16,8 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-async function getArticles(category){
-  return new Promise(async (resolve, reject) => {
-    try {
-      let snap = await db.collection('articles').where('tags', 'array-contains', category).get();
-      
-      snap.forEach((doc) => {
-        console.log(doc.exists);
-
-        let articleData = doc.data();
-
-        let time = new moment(articleData.timestamp.seconds*1000);
+function prepareArticle(articleData){
+      let time = new moment(articleData.timestamp.seconds*1000);
         let timeDisplay = time.format('MMMM Do, YYYY')
         let author_id = articleData.author.toLowerCase().split().join("_");
         let tags = articleData.tags.map(tag => {
@@ -40,10 +31,56 @@ async function getArticles(category){
         article.date = timeDisplay;
         article.author_id = author_id;
         article.tags = tags;
-        console.log(doc.id);
-        article.id = doc.id;
-        resolve(article);
-      });
+
+        return article;
+}
+
+async function getArticles(category){
+  return new Promise(async (resolve, reject) => {
+    try {
+
+      let isFeature = category.includes("feature");
+
+      let lim;
+      let recentArticles = [];
+      let count = 1;
+      if(isFeature){
+        lim = 1;
+      }else{
+        lim = 4;
+      }
+
+      let snap;
+      if(category == "main"){
+        snap = await db.collection('articles').orderBy('timestamp', 'desc').limit(4).get();
+      }else{
+        snap = await db.collection('articles').where('tags', 'array-contains', category).orderBy('timestamp', 'desc').limit(lim).get();
+      }
+
+      for(var doc of snap.docs){
+
+        let articleData = doc.data();
+
+        if(!articleData.tags.includes(category + "-feature")){
+          let article = prepareArticle(articleData);
+          article.id = doc.id;
+
+          if(isFeature){
+            resolve(article)
+          }else{
+            recentArticles.push(article);
+
+            if(count == 3 || count == snap.docs.length){
+              console.log(recentArticles.length);
+              resolve(recentArticles);
+              break;
+            }else{
+              count++;
+            }
+          }
+        }
+
+      }
     }catch(err){
       reject(err);
     }
@@ -55,10 +92,11 @@ async function getArticles(category){
 app.get('/', async (req, res, next) => {
   try {
     let featureData = await getArticles('main-feature');
-    
+    let recentArticles = await getArticles('main');
     res.render('main', {
       activePage: "Home",
-      feature: featureData
+      feature: featureData,
+      recentArticles: recentArticles
     });
   } catch (err) {
     console.log(err);
@@ -83,9 +121,11 @@ app.get('/:category', async (req, res, next) => {
   if(category in tagNames || category in authors){
     let featureTag = category + "-feature";
     let feature = await getArticles(featureTag);
+    let recentArticles = await getArticles(category);
     res.render('main', {
       activePage: getActivePage(category),
-      feature: feature
+      feature: feature,
+      recentArticles: recentArticles
     });
   }else {
     next();
