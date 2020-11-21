@@ -2,7 +2,7 @@
 <%- include ('./partials/headerStyles.ejs') %>
 
 <style>
-    h1 {
+h1 {
     font-size: 24px;
 }
 
@@ -58,6 +58,12 @@ p {
                 font-size: 12px;
             }
 
+            .leadin {
+                font-family: "IBM Plex Serif", serif;
+                font-weight: bold;
+                font-size: 12px;
+            }
+
             .tag {
                 color:gray;
             }
@@ -110,6 +116,8 @@ p {
                                     <% } %>
                                 <% } %>
                             </div>
+                            <br>
+                            <div class="col-12 tags"><%=feature.leadin%></div>
                         </div>
                     </div>
                 </div>
