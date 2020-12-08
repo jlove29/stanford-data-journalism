@@ -38,7 +38,7 @@ function prepareArticle(articleData){
 async function getArticles(category){
   return new Promise(async (resolve, reject) => {
     try {
-
+      console.log(category);
       let isFeature = category.includes("feature");
 
       let lim;
@@ -62,15 +62,19 @@ async function getArticles(category){
         let articleData = doc.data();
 
         if(!articleData.tags.includes(category + "-feature")){
+          console.log(articleData.title);
           let article = prepareArticle(articleData);
+          console.log(article.date);
           article.id = doc.id;
 
           if(isFeature){
             resolve(article)
           }else{
             recentArticles.push(article);
+            console.log(recentArticles);
 
             if(count == 3 || count == snap.docs.length){
+              console.log("resolving");
               console.log(recentArticles.length);
               resolve(recentArticles);
               break;
