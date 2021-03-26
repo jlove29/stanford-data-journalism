@@ -136,7 +136,7 @@ p {
                         <div class="row metadata">
                             <div class="col-4 date"><%=article.date%></div>
                             <div class="col-8 tags">
-                            <% for(var tag of feature.tags) { %>
+                            <% for(var tag of article.tags) { %>
                                 <% if(tag) { %>
                                     <a class="tag" href="<%=tag.tagID%>"><%=tag.tagName%></a> 
                                 <% } %>

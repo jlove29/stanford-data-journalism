@@ -9,6 +9,11 @@
     "rewrites": [{
       "source": "**",
       "function": "app"
+    }],
+    "redirects": [{
+      "source": "/vaccine-tracker",
+      "destination": "https://cmorton.shinyapps.io/VaccinationDash/",
+      "type": 301
     }]
   }
 }
